@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Inter';
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+}
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap');
+}
+
+:root {
+  /* Light theme */
+  --background: #fafaf9;
+  --foreground: #1c1917;
+  --card: #ffffff;
+  --card-foreground: #1c1917;
+  --primary: #27272a;
+  --primary-foreground: #fafaf9;
+  --secondary: #f5f5f4;
+  --secondary-foreground: #57534e;
+  --muted: #f5f5f4;
+  --muted-foreground: #78716c;
+  --accent: #e7e5e4;
+  --accent-foreground: #1c1917;
+  --border: #e7e5e4;
+  --input: #e7e5e4;
+  --ring: #1c1917;
+  --radius: 0.6rem;
+}
+
+.dark {
+  /* Warm, calm dark theme with better contrast */
+  --background: #0f0e0d;
+  --foreground: #fafaf9;
+  --card: #1c1917;
+  --card-foreground: #f5f5f4;
+  --primary: #f5f5f4;
+  --primary-foreground: #0f0e0d;
+  --secondary: #292524;
+  --secondary-foreground: #e7e5e4;
+  --muted: #262320;
+  --muted-foreground: #a8a29e;
+  --accent: #44403c;
+  --accent-foreground: #f5f5f4;
+  --border: #3c3835;
+  --input: #292524;
+  --ring: #d6d3d1;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-heading: 'Outfit', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/10;
+    letter-spacing: -0.01em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+/* Calm Grainy Texture for Professional Depth */
+.bg-warm-mesh {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(231, 229, 228, 0.4) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(214, 211, 209, 0.2) 0px, transparent 50%);
+}
+
+.dark .bg-warm-mesh {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(68, 64, 60, 0.4) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(41, 37, 36, 0.3) 0px, transparent 50%);
+}
+
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3仿真%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+}
+
+.bg-grid-soft {
+  background-size: 32px 32px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+}
+
+.smooth-card {
+  @apply bg-card border border-border/60;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02), 0 8px 16px rgba(0, 0, 0, 0.03);
+}
+
+.text-calm-gradient {
+  @apply bg-gradient-to-br from-foreground via-foreground to-stone-500 bg-clip-text text-transparent;
+}
+
+/* Fix visibility */
+.text-balance {
+  text-wrap: balance;
+}
