@@ -161,8 +161,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <footer className="w-full mt-12 pb-8 flex flex-col items-center select-none z-20 pointer-events-none h-[400px]">
-                <div className="pointer-events-auto flex flex-col items-center w-full max-w-[100vw]">
+              <footer className="w-full mt-4 pb-8 flex flex-col items-center select-none z-20 pointer-events-none h-[400px]">
+                <div className="pointer-events-auto flex flex-col items-center w-full overflow-visible">
                   <LiquidText
                     text="Gitara"
                     fontSize={700}
@@ -220,30 +220,32 @@ export default function Home() {
             /* Results State */
             <motion.div
               key="results"
-              className="container mx-auto px-6 py-40 pointer-events-none"
+              className="w-full py-40 pointer-events-none"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.2, 0.65, 0.3, 0.9] }}
             >
-              <div className="w-full max-w-6xl mx-auto pointer-events-auto">
-                <div className="flex justify-between items-center mb-20">
-                  <button
-                    onClick={reset}
-                    className="group text-xs font-black text-stone-200 hover:text-stone-100 transition-all flex items-center gap-3 border border-stone-600 px-6 py-3 rounded-xl bg-stone-800/80 backdrop-blur-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:bg-stone-700/80"
-                  >
-                    <Zap className="w-4 h-4 fill-current" />
-                    NEW ANALYSIS
-                  </button>
-                  <div className="text-[10px] font-black tracking-[0.2em] text-stone-400 uppercase">Stable Analysis</div>
+              <div className="container mx-auto px-6 pointer-events-auto">
+                <div className="w-full max-w-6xl mx-auto">
+                  <div className="flex justify-between items-center mb-20">
+                    <button
+                      onClick={reset}
+                      className="group text-xs font-black text-stone-200 hover:text-stone-100 transition-all flex items-center gap-3 border border-stone-600 px-6 py-3 rounded-xl bg-stone-800/80 backdrop-blur-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:bg-stone-700/80"
+                    >
+                      <Zap className="w-4 h-4 fill-current" />
+                      NEW ANALYSIS
+                    </button>
+                    <div className="text-[10px] font-black tracking-[0.2em] text-stone-400 uppercase">Stable Analysis</div>
+                  </div>
+                  <AnalysisResults result={result} status={status} />
                 </div>
-                <AnalysisResults result={result} status={status} />
               </div>
 
-              <footer className="mt-20 pb-20 border-t border-stone-800/10 pt-20 flex flex-col items-center select-none pointer-events-none">
-                <div className="pointer-events-auto flex flex-col items-center w-full max-w-[100vw]">
+              <footer className="mt-4 pb-20 border-t border-stone-800/10 pt-20 flex flex-col items-center select-none pointer-events-none">
+                <div className="pointer-events-auto flex flex-col items-center w-full overflow-visible">
                   <LiquidText
                     text="Gitara"
-                    fontSize={800}
+                    fontSize={750}
                     className="h-[400px] w-full mb-[-100px]"
                     darkColor="#ffffff"
                   />
