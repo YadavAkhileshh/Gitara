@@ -1,5 +1,5 @@
 {
-  "name": "gitara-devops",
+  "name": "Gitara",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -27,10 +27,12 @@
     "reactflow": "^11.11.4",
     "recharts": "^3.7.0",
     "tailwind-merge": "^3.4.0",
+    "three": "^0.182.0",
     "zod": "^4.3.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/three": "^0.182.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.4",
     "tailwindcss": "^4"
